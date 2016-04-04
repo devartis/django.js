@@ -6,6 +6,12 @@ Current
 
 - Nothing yet
 
+0.8.3 (2016-04-04)
+------------------
+
+- Updated to Django >= 1.9
+- Fixed template tags to generate HTML fragments with format_html
+
 0.8.1 (2013-10-19)
 ------------------
 
