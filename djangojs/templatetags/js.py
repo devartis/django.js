@@ -10,6 +10,7 @@ from django.utils import six
 
 from djangojs import JQUERY_MIGRATE_VERSION
 from djangojs.conf import settings
+from django.utils.html import format_html
 
 register = template.Library()
 
@@ -112,9 +113,9 @@ def javascript(filename, type='text/javascript'):
     '''A simple shortcut to render a ``script`` tag to a static javascript file'''
     if '?' in filename and len(filename.split('?')) is 2:
         filename, params = filename.split('?')
-        return '<script type="%s" src="%s?%s"></script>' % (type, staticfiles_storage.url(filename), params)
+        return format_html('<script type="{}" src="{}?{}"></script>', type, staticfiles_storage.url(filename), params)
     else:
-        return '<script type="%s" src="%s"></script>' % (type, staticfiles_storage.url(filename))
+        return format_html('<script type="{}" src="{}"></script>', type, staticfiles_storage.url(filename))
 
 
 @register.simple_tag
@@ -138,7 +139,7 @@ def coffee(filename):
 @register.simple_tag
 def css(filename):
     '''A simple shortcut to render a ``link`` tag to a static CSS file'''
-    return '<link rel="stylesheet" type="text/css" href="%s" />' % staticfiles_storage.url(filename)
+    return format_html('<link rel="stylesheet" type="text/css" href="{}" />', staticfiles_storage.url(filename))
 
 
 def _boolean(value):
