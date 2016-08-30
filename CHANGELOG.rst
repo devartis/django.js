@@ -6,6 +6,12 @@ Current
 
 - Nothing yet
 
+0.8.4 (2016-08-30)
+------------------
+
+- Updated to Django >= 1.10
+- Fixed unused import in url configuration
+
 0.8.3 (2016-04-04)
 ------------------
 

@@ -23,7 +23,7 @@ This is currently a work in progress (API wil not be stable before 1.0) so don't
 Compatibility
 =============
 
-Django.js requires Python 2.6+ and Django 1.9+.
+Django.js requires Python 2.7+ and Django 1.10+.
 
 
 Installation
